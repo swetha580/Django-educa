@@ -30,13 +30,16 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
     }
 }
-
 INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
     'django.contrib.admin',
@@ -47,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
     'embed_video',
-    'memcache_status',
     'rest_framework',
 ]
 
