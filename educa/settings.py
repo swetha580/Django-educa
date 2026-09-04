@@ -30,6 +30,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
 
 INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
     'embed_video',
+    'memcache_status',
 ]
 
 MIDDLEWARE = [
