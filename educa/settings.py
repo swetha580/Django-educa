@@ -148,3 +148,12 @@ REST_FRAMEWORK = {
 }
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
