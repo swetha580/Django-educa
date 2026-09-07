@@ -18,3 +18,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
