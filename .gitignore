@@ -1,5 +1,7 @@
 env_educa
-__pycache__
+env_educa_linux
 *.pyc
+__pycache__
 db.sqlite3
 media
+static
