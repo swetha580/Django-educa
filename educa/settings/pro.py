@@ -9,5 +9,12 @@ ADMINS = (
 ALLOWED_HOSTS = ['*']
 
 DATABASES = {
-    'default': {}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'educa',
+        'USER': 'educa',
+        'PASSWORD': 'R8#vT2!mQ7@kL5$zP9x',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
